@@ -5,12 +5,18 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BehovComponent } from './behov/behov.component';
+import { InkopComponent } from './inkop/inkop.component';
+import { MeddelandenComponent } from './meddelanden/meddelanden.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    BehovComponent,
+    InkopComponent,
+    MeddelandenComponent
   ],
   imports: [
     BrowserModule,
