@@ -1,3 +1,61 @@
-<p>
-  behov works!
-</p>
+<div class="ui two column stackable grid container">
+  <div class="sixteen wide column">
+    <div class="ui segment clearing">
+      <form class="ui form">
+        <div class="field">
+          <label>Tekniker:</label>
+          <input type="text" placeholder="HTML, CSS, C#..." />
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Max pris:</label>
+            <input type="text" placeholder="Kr/tim" />
+          </div>
+          <div class="field">
+            <label>Tillgänglig inom:</label>
+            <input type="text" placeholder="Veckor" />
+          </div>
+        </div>
+        <i class="grid layout icon" [ngClass]="{blue: showGrid}" (click)="showGrid = true"></i>
+        <i class="list layout icon" [ngClass]="{blue: !showGrid}" (click)="showGrid = false"></i>
+        <div class="ui primary button right floated" (click)="SearchConsults()">Sök &raquo;</div>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="consultList.length > 0">
+  <div class="ui container" *ngIf="showGrid">
+    <div class="ui cards centered aligned">
+      <div class="card" *ngFor="let consult of consultList" (click)="consultClick(consult)">
+        <h2 class="ui header">{{consult.name}}</h2>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="ui container" *ngIf="!showGrid">
+    <br />
+    <table class="ui basic selectable table unstackable ">
+      <thead>
+        <tr>
+          <th>Namn</th>
+          <th>Bransch</th>
+          <th>Tillgänglig</th>
+          <th>Tekniker</th>
+          <th>Timpris</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consult of consultList" (click)="consultClick(consult)">
+          <td>{{consult.name}}</td>
+          <td>{{consult.market}}</td>
+          <td>{{consult.availability}}</td>
+          <td>{{consult.techniques}}</td>
+          <td>{{consult.rate}}</td>
+          <td>{{consult.rating}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
