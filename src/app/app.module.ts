@@ -1,3 +1,4 @@
+import { ApiService } from './services/api.service';
 import { AppRoutingModule } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,7 @@ import { MeddelandenComponent } from './meddelanden/meddelanden.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
