@@ -1,3 +1,4 @@
+import { SettingsComponent } from './settings/settings.component';
 import { MeddelandenComponent } from './meddelanden/meddelanden.component';
 import { InkopComponent } from './inkop/inkop.component';
 import { BehovComponent } from './behov/behov.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'behov', component: BehovComponent },
     { path: 'inkop', component: InkopComponent },
     { path: 'meddelanden', component: MeddelandenComponent },
+    { path: 'installningar', component: SettingsComponent },
 ];
 
 @NgModule({

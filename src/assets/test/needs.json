@@ -1,0 +1,4 @@
+[
+    {"name": "Tekniker, HR", "minexperience": "5", "maxexperience": "5", "minrate": "0", "maxrate": "800", "minage": "18", "maxage": "50", "blacklist": []},
+    {"name": "Sekreterare", "minexperience": "0", "maxexperience": "5", "minrate": "0", "maxrate": "800", "minage": "18", "maxage": "30", "blacklist": ["Ericsson", "Scania"]}
+]

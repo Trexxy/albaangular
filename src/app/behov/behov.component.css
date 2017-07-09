@@ -1,0 +1,9 @@
+.ui.card:hover {
+    background-color: rgba(0,0,0,.05);
+}
+.ui.card .buttons {
+    visibility: hidden;
+}
+.ui.card:hover .buttons {
+    visibility: visible;
+}

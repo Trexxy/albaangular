@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BehovComponent } from './behov/behov.component';
 import { InkopComponent } from './inkop/inkop.component';
 import { MeddelandenComponent } from './meddelanden/meddelanden.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MeddelandenComponent } from './meddelanden/meddelanden.component';
     DashboardComponent,
     BehovComponent,
     InkopComponent,
-    MeddelandenComponent
+    MeddelandenComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

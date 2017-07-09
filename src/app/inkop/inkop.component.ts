@@ -1,3 +1,5 @@
+import { Needs } from './../interfaces/needs';
+import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InkopComponent implements OnInit {
 
-  constructor() { }
+  needList: Needs[] = [];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.LoadNeeds();
   }
 
+  LoadNeeds() {
+    this.apiService.getNeedsList().subscribe(data => {
+      this.needList = data as Needs[];
+      console.log(this.needList);
+    });
+  }
 }

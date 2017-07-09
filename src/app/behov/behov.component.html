@@ -1,6 +1,7 @@
-<div class="ui two column stackable grid container">
-  <div class="sixteen wide column">
-    <div class="ui segment clearing">
+<div class="ui container">
+  <div>
+    <div class="ui segment red clearing">
+      <div class="ui top attached label large red">Sök konsult</div>
       <form class="ui form">
         <div class="field">
           <label>Tekniker:</label>
@@ -22,40 +23,59 @@
       </form>
     </div>
   </div>
-</div>
-<div *ngIf="consultList.length > 0">
-  <div class="ui container" *ngIf="showGrid">
-    <div class="ui cards centered aligned">
-      <div class="card" *ngFor="let consult of consultList" (click)="consultClick(consult)">
-        <h2 class="ui header">{{consult.name}}</h2>
+
+  <div *ngIf="consultList.length > 0" class="ui segment red">
+    <div class="ui top attached label large red">Sökresultat</div>
+    <div>
+      <br />
+      <div class="ui container" *ngIf="showGrid">
+        <div class="ui four cards">
+          <div class="ui card" *ngFor="let consult of consultList">
+            <div class="content">
+              <div class="header">{{consult.name}}</div>
+              <div class="meta">
+                <span class="date">Tillgänglig {{consult.availability}}</span>
+              </div>            
+              <strong>Tekniker:</strong><br />
+              {{consult.techniques.toString().split(',').join(', ')}}<br />
+              <strong>Bransch: </strong>{{consult.market}}
+            </div>
+              <div class="extra content">
+                {{consult.rate}} kr/tim
+              </div>            
+              <div class="ui two bottom attached buttons">
+                  <div class="ui button" (click)="consultClick(consult)">CV</div>
+                  <div class="ui button" (click)="consultClick(consult)">Kontakt</div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ui container" *ngIf="!showGrid">
+        <table class="ui basic selectable table">
+          <thead>
+            <tr>
+              <th>Namn</th>
+              <th>Bransch</th>
+              <th>Tillgänglig</th>
+              <th>Tekniker</th>
+              <th>Timpris</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let consult of consultList" (click)="consultClick(consult)">
+              <td>{{consult.name}}</td>
+              <td>{{consult.market}}</td>
+              <td>{{consult.availability}}</td>
+              <td>{{consult.techniques}}</td>
+              <td>{{consult.rate}}</td>
+              <td>{{consult.rating}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-
-  </div>
-  <div class="ui container" *ngIf="!showGrid">
-    <br />
-    <table class="ui basic selectable table unstackable ">
-      <thead>
-        <tr>
-          <th>Namn</th>
-          <th>Bransch</th>
-          <th>Tillgänglig</th>
-          <th>Tekniker</th>
-          <th>Timpris</th>
-          <th>Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let consult of consultList" (click)="consultClick(consult)">
-          <td>{{consult.name}}</td>
-          <td>{{consult.market}}</td>
-          <td>{{consult.availability}}</td>
-          <td>{{consult.techniques}}</td>
-          <td>{{consult.rate}}</td>
-          <td>{{consult.rating}}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>
