@@ -1,4 +1,7 @@
-<div class="ui secondary pointing menu inverted red">
+<div class="ui menu inverted red borderless fixed">
+  <a routerLink="/dashboard">
+    <img src="assets/images/Alba-EnterprisesLogo.png" class="title-logo" />
+  </a>
   <a class="item" routerLink="/dashboard" [routerLinkActive]="['active']">
     Hem
   </a>
@@ -8,7 +11,13 @@
   <a class="item" routerLink="/inkop" [routerLinkActive]="['active']">
     Inköp
   </a>
+  <a class="item" routerLink="/meddelanden" [routerLinkActive]="['active']">
+    Meddelanden
+  </a>  
   <div class="right menu">
+    <a class="ui item" routerLink="/installningar" [routerLinkActive]="['active']">
+      <i class="setting icon"></i>
+    </a>    
     <a class="ui item">
       Logga ut
     </a>
