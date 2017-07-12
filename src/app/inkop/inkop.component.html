@@ -13,44 +13,48 @@
   <div *ngFor="let need of needList" class="ui segment red clearing">
     <div class="ui top attached label large red">{{need.name}}</div>
     <form class="ui form">
+      <div class="ui two column grid">
+        <div class="column">
+          <div class="fields">
+            <div class="field">
+              <label>Års erfarenhet, minimum</label>
+              <input type="number" value="{{need.minexperience}}" />
+            </div>
+            <div class="field">
+              <label>Års erfarenhet, maximum</label>
+              <input type="number" value="{{need.maxexperience}}" />
+            </div>
+          </div>
 
-      <div class="fields">
-        <div class="field">
-          <label>Års erfarenhet, minimum</label>
-          <input type="number" value="{{need.minexperience}}" />
+          <div class="fields">
+            <div class="field">
+              <label>Ålder, minimum</label>
+              <input type="number" value="{{need.minage}}" />
+            </div>
+            <div class="field">
+              <label>Ålder, maximum</label>
+              <input type="number" value="{{need.maxage}}" />
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <label>Pris, minimum</label>
+              <input type="number" value="{{need.minrate}}" />
+            </div>
+            <div class="field">
+              <label>pris, maximum</label>
+              <input type="number" value="{{need.maxrate}}" />
+            </div>
+          </div>
         </div>
-        <div class="field">
-          <label>Års erfarenhet, maximum</label>
-          <input type="number" value="{{need.maxexperience}}" />
-        </div>        
+        <div class="column">
+          <div class="field">
+            <label>Blacklist</label>
+            <textarea>{{need.blacklist.join(', ')}}</textarea>
+          </div>
+        </div>
       </div>
-
-      <div class="fields">
-        <div class="field">
-          <label>Ålder, minimum</label>
-          <input type="number" value="{{need.minage}}" />
-        </div>
-        <div class="field">
-          <label>Ålder, maximum</label>
-          <input type="number" value="{{need.maxage}}" />
-        </div>        
-      </div>      
-
-      <div class="fields">
-        <div class="field">
-          <label>Pris, minimum</label>
-          <input type="number" value="{{need.minrate}}" />
-        </div>
-        <div class="field">
-          <label>pris, maximum</label>
-          <input type="number" value="{{need.maxrate}}" />
-        </div>        
-      </div>  
-
-      <div class="field">
-        <label>Blacklist</label>
-        <textarea>{{need.blacklist.join(', ')}}</textarea>
-      </div>      
 
       <div class="ui button primary right floated">Spara ändringar</div>
     </form>
@@ -58,4 +62,3 @@
 
 
 </div>
-
