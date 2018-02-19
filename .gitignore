@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /src/assets/semantic/dist
+/src/assets/semantic
 
 # dependencies
 /node_modules
