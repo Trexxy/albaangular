@@ -4,10 +4,12 @@
 
 ## Installation
 - Installera node.js (https://nodejs.org)
+- Installera gulp genom att köra kommandot `npm install gulp-cli -g`
 - Ladda ner/checka ut repositoryn i valfri mapp
 - Öppna ett kommandofönster och gå till mappen med projektet
-- Kör kommandot "npm install", en "node_modules" mapp bör nu skapas och npm installerar nödvändiga paket
-- När kommandot kört klart kör kommandot "npm start", ett nytt webbläsarfönster öppnas och projektet är igång
+- Kör kommandot `npm install`, en "node_modules" mapp bör nu skapas och npm installerar nödvändiga paket
+- Gå in i mappen `src/assets/semantic` och kör kommandot `gulp build`
+- När kommandot kört klart kör navigera till rootmappen och kör kommandot `npm start`, öppna en webbläsare och navigera till (http://localhost:4200) för att se projektet
 
 ## Development server
 
