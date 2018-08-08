@@ -9,7 +9,11 @@
 - Öppna ett kommandofönster och gå till mappen med projektet
 - Kör kommandot `npm install`, en "node_modules" mapp bör nu skapas och npm installerar nödvändiga paket
 - Gå in i mappen `src/assets/semantic` och kör kommandot `gulp build`
-- När kommandot kört klart kör navigera till rootmappen och kör kommandot `npm start`, öppna en webbläsare och navigera till (http://localhost:4200) för att se projektet
+- När kommandot kört klart navigera till rootmappen och kör kommandot `npm start`, öppna en webbläsare och navigera till (http://localhost:4200) för att se projektet
+
+## Docker
+- Kör kommandot `docker image build -t albazero` för att bygga en docker image
+- När bygget är klart kan man köra `docker run -p 3000:80 --rm albazero` för att starta containern
 
 ## Development server
 
